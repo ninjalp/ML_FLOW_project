@@ -1,0 +1,15 @@
+artifact_uri: file:///E:/ml_flow/mlruns/0/b4ba660ad1954112ba8a77ff696a9e10/artifacts
+end_time: 1728682215886
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b4ba660ad1954112ba8a77ff696a9e10
+run_name: bittersweet-sow-837
+run_uuid: b4ba660ad1954112ba8a77ff696a9e10
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1728682213415
+status: 3
+tags: []
+user_id: ninja
