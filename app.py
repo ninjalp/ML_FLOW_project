@@ -6,6 +6,7 @@ import logging
 import sys
 import warnings
 from urllib.parse import urlparse
+import dagshub
 
 import numpy as np
 import pandas as pd
@@ -31,6 +32,8 @@ def eval_metrics(actual, pred):
 if __name__ == "__main__":
     warnings.filterwarnings("ignore")
     np.random.seed(40)
+
+    dagshub.init(repo_owner='ninjalp', repo_name='ml_flow_project', mlflow=True)
 
     # Read the wine-quality csv file from the URL
     csv_url = (
@@ -76,6 +79,10 @@ if __name__ == "__main__":
 
         predictions = lr.predict(train_x)
         signature = infer_signature(train_x, predictions)
+
+
+        remote_server_uri="https://dagshub.com/ninjalp/ml_flow_project.mlflow"
+        mlflow.set_tracking_uri(remote_server_uri)
 
         tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
 
